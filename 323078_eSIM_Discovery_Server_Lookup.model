@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE focus-model [
+]>
+<!--323078_eSIM_Discovery_Server_Lookup--><focus-model auxDataFilesFolder="" classifyAttributesEnabled="false" inputOutput="false" manual="true">
+<model-identification modelTag="@MFE Automation @V1 @MFE Automation_MFE @323078_eSIM_Discovery_Server_Lookup">
+<model-identification-field name="Application Name" partOfTag="true" value="MFE Automation"/>
+<model-identification-field name="Application code version #" partOfTag="true" value="V1"/>
+<model-identification-field name="Application Function" partOfTag="true" value="MFE Automation_MFE"/>
+<model-identification-field name="Updated Reason" partOfTag="false" value="New Model"/>
+<model-identification-field name="Created By" partOfTag="false" value="IgniteAdmin"/>
+<model-identification-field name="Created Date and Time" partOfTag="false" value="12 Aug 2020 11:57:23"/>
+<model-identification-field name="Updated By" partOfTag="false" value="IgniteAdmin"/>
+<model-identification-field name="Updated Date and Time" partOfTag="false" value="12 Aug 2020 11:58:53"/>
+<model-identification-field name="Application Sub Function" partOfTag="true" value="323078_eSIM_Discovery_Server_Lookup"/>
+<model-identification-field name="Test Stage" partOfTag="false" value=""/>
+<model-identification-field name="Criticality" partOfTag="false" value=""/>
+<model-identification-field name="Project" partOfTag="false" value=""/>
+<model-identification-field name="Epic" partOfTag="false" value=""/>
+<model-identification-field name="Feature" partOfTag="false" value=""/>
+<model-identification-field name="User Story" partOfTag="false" value=""/>
+</model-identification>
+<using-attributes-pool dbname="focus_attributedatapool" host="localhost" inheritedbydbname="focus_attributedata_inheritedby" password="135df44bf7936a15ee" port="5984" protocol="http" user="otfaadmin"/>
+<attribute attr_class="NONE" dependencies="false" description="" group="" iotype="NEITHER" name="Scenario_Scop" parentDetailsApplicationName="MFE Automation" parentDetailsFunctionality="MFE" parentDetailsModel="323078_eSIM_Discovery_Server_Lookup.model" parentDetailsPortfolio="NGA" parentDetailsTenantId="ATT" parentDetailsUsername="IgniteAdmin" poolId="" revision="" type="STRING">
+<value name="New_Device" weight="1"/>
+<value name="Upgrade_Device" weight="1"/>
+<value name="New_Device1" weight="1"/>
+<value name="New_Device_OCE" weight="1"/>
+<value name="New_Device_Opus-Cor" weight="1"/>
+<value name="New_Device_MyAtt" weight="1"/>
+<value name="ND1" weight="1"/>
+</attribute>
+<attribute attr_class="NONE" dependencies="false" description="" group="" iotype="NEITHER" name="Application_Process" parentDetailsApplicationName="MFE Automation" parentDetailsFunctionality="MFE" parentDetailsModel="323078_eSIM_Discovery_Server_Lookup.model" parentDetailsPortfolio="NGA" parentDetailsTenantId="ATT" parentDetailsUsername="IgniteAdmin" poolId="" revision="" type="STRING">
+<value name="Premier" weight="1"/>
+<value name="Opus_COR" weight="1"/>
+<value name="Opus_Bcare" weight="1"/>
+<value name="Opus_Bsales" weight="1"/>
+<value name="MyAtt" weight="1"/>
+<value name="OCE" weight="1"/>
+</attribute>
+<attribute attr_class="NONE" dependencies="false" description="" group="" iotype="NEITHER" name="Device_Process" parentDetailsApplicationName="MFE Automation" parentDetailsFunctionality="MFE" parentDetailsModel="323078_eSIM_Discovery_Server_Lookup.model" parentDetailsPortfolio="NGA" parentDetailsTenantId="ATT" parentDetailsUsername="IgniteAdmin" poolId="" revision="" type="STRING">
+<value name="Direct_Fulfilment" weight="1"/>
+<value name="BYOD" weight="1"/>
+<value name="Click_2_Store" weight="1"/>
+<value name="Premier_R2Go" weight="1"/>
+<value name="Cash_n_Carry" weight="1"/>
+<value name=" N6N9_wearables_Non" weight="1"/>
+</attribute>
+<attribute attr_class="NONE" dependencies="false" description="" group="" iotype="NEITHER" name="FAN_Type" parentDetailsApplicationName="MFE Automation" parentDetailsFunctionality="MFE" parentDetailsModel="323078_eSIM_Discovery_Server_Lookup.model" parentDetailsPortfolio="NGA" parentDetailsTenantId="ATT" parentDetailsUsername="IgniteAdmin" poolId="" revision="" type="STRING">
+<value name="FN_Primary" weight="1"/>
+<value name="CRU_Mobility" weight="1"/>
+<value name="FN_Extended" weight="1"/>
+<value name="FN_Subscriber_Paid" weight="1"/>
+<value name="FN_Extended_subscriber_paid" weight="1"/>
+<value name="IRU_Mobility" weight="1"/>
+</attribute>
+<attribute attr_class="NONE" dependencies="false" description="" group="" iotype="NEITHER" name="eSIM_Type" parentDetailsApplicationName="MFE Automation" parentDetailsFunctionality="MFE" parentDetailsModel="323078_eSIM_Discovery_Server_Lookup.model" parentDetailsPortfolio="NGA" parentDetailsTenantId="ATT" parentDetailsUsername="IgniteAdmin" poolId="" revision="" type="STRING">
+<value name="Orange_Sim" weight="1"/>
+<value name="FN_Black" weight="1"/>
+<value name="NA" weight="1"/>
+</attribute>
+<restriction expression="!(Scenario_Scop.equals(&quot;New_Device&quot;)) || (Application_Process.equals(&quot;Opus_Bcare&quot;) || Application_Process.equals(&quot;Opus_Bsales&quot;)) &amp;&amp; (Device_Process.equals(&quot;Direct_Fulfilment&quot;) || Device_Process.equals(&quot;BYOD&quot;) || Device_Process.equals(&quot;Click_2_Store&quot;)) &amp;&amp; (FAN_Type.equals(&quot;CRU_Mobility&quot;) || FAN_Type.equals(&quot;FN_Extended&quot;) || FAN_Type.equals(&quot;FN_Subscriber_Paid&quot;) || FAN_Type.equals(&quot;FN_Extended_subscriber_paid&quot;)) &amp;&amp; (eSIM_Type.equals(&quot;Orange_Sim&quot;) || eSIM_Type.equals(&quot;FN_Black&quot;))" iff="false" isActive="true" isAutoGenerated="false" name="1" type="If-Then">
+<if-expr is_or="false">
+<focus-ctd-cond attribute="Scenario_Scop" operation="Equals">
+<focus-ctd-cond-val value="New_Device"/>
+</focus-ctd-cond>
+</if-expr>
+<then-expr is_or="false">
+<focus-ctd-cond attribute="Application_Process" operation="Equals">
+<focus-ctd-cond-val value="Opus_Bcare"/>
+<focus-ctd-cond-val value="Opus_Bsales"/>
+</focus-ctd-cond>
+<focus-ctd-cond attribute="Device_Process" operation="Equals">
+<focus-ctd-cond-val value="Direct_Fulfilment"/>
+<focus-ctd-cond-val value="BYOD"/>
+<focus-ctd-cond-val value="Click_2_Store"/>
+</focus-ctd-cond>
+<focus-ctd-cond attribute="FAN_Type" operation="Equals">
+<focus-ctd-cond-val value="CRU_Mobility"/>
+<focus-ctd-cond-val value="FN_Extended"/>
+<focus-ctd-cond-val value="FN_Subscriber_Paid"/>
+<focus-ctd-cond-val value="FN_Extended_subscriber_paid"/>
+</focus-ctd-cond>
+<focus-ctd-cond attribute="eSIM_Type" operation="Equals">
+<focus-ctd-cond-val value="Orange_Sim"/>
+<focus-ctd-cond-val value="FN_Black"/>
+</focus-ctd-cond>
+</then-expr>
+</restriction>
+<restriction expression="!(Scenario_Scop.equals(&quot;Upgrade_Device&quot;)) || (Application_Process.equals(&quot;Opus_COR&quot;) || Application_Process.equals(&quot;Opus_Bcare&quot;) || Application_Process.equals(&quot;MyAtt&quot;)) &amp;&amp; (FAN_Type.equals(&quot;FN_Primary&quot;) || FAN_Type.equals(&quot;FN_Subscriber_Paid&quot;)) &amp;&amp; Device_Process.equals(&quot; N6N9_wearables_Non&quot;) &amp;&amp; eSIM_Type.equals(&quot;NA&quot;)" iff="false" isActive="true" isAutoGenerated="false" name="2" type="If-Then">
+<if-expr is_or="false">
+<focus-ctd-cond attribute="Scenario_Scop" operation="Equals">
+<focus-ctd-cond-val value="Upgrade_Device"/>
+</focus-ctd-cond>
+</if-expr>
+<then-expr is_or="false">
+<focus-ctd-cond attribute="Application_Process" operation="Equals">
+<focus-ctd-cond-val value="Opus_COR"/>
+<focus-ctd-cond-val value="Opus_Bcare"/>
+<focus-ctd-cond-val value="MyAtt"/>
+</focus-ctd-cond>
+<focus-ctd-cond attribute="FAN_Type" operation="Equals">
+<focus-ctd-cond-val value="FN_Primary"/>
+<focus-ctd-cond-val value="FN_Subscriber_Paid"/>
+</focus-ctd-cond>
+<focus-ctd-cond attribute="Device_Process" operation="Equals">
+<focus-ctd-cond-val value=" N6N9_wearables_Non"/>
+</focus-ctd-cond>
+<focus-ctd-cond attribute="eSIM_Type" operation="Equals">
+<focus-ctd-cond-val value="NA"/>
+</focus-ctd-cond>
+</then-expr>
+</restriction>
+<restriction expression="!(Scenario_Scop.equals(&quot;New_Device1&quot;)) || Application_Process.equals(&quot;Premier&quot;) &amp;&amp; Device_Process.equals(&quot;Premier_R2Go&quot;) &amp;&amp; FAN_Type.equals(&quot;FN_Primary&quot;) &amp;&amp; eSIM_Type.equals(&quot;FN_Black&quot;)" iff="false" isActive="true" isAutoGenerated="false" name="3" type="If-Then">
+<if-expr is_or="false">
+<focus-ctd-cond attribute="Scenario_Scop" operation="Equals">
+<focus-ctd-cond-val value="New_Device1"/>
+</focus-ctd-cond>
+</if-expr>
+<then-expr is_or="false">
+<focus-ctd-cond attribute="Application_Process" operation="Equals">
+<focus-ctd-cond-val value="Premier"/>
+</focus-ctd-cond>
+<focus-ctd-cond attribute="Device_Process" operation="Equals">
+<focus-ctd-cond-val value="Premier_R2Go"/>
+</focus-ctd-cond>
+<focus-ctd-cond attribute="FAN_Type" operation="Equals">
+<focus-ctd-cond-val value="FN_Primary"/>
+</focus-ctd-cond>
+<focus-ctd-cond attribute="eSIM_Type" operation="Equals">
+<focus-ctd-cond-val value="FN_Black"/>
+</focus-ctd-cond>
+</then-expr>
+</restriction>
+<restriction expression="!(Scenario_Scop.equals(&quot;New_Device_OCE&quot;)) || Application_Process.equals(&quot;OCE&quot;) &amp;&amp; (Device_Process.equals(&quot;Direct_Fulfilment&quot;) || Device_Process.equals(&quot;BYOD&quot;)) &amp;&amp; (FAN_Type.equals(&quot;FN_Primary&quot;) || FAN_Type.equals(&quot;CRU_Mobility&quot;)) &amp;&amp; (eSIM_Type.equals(&quot;Orange_Sim&quot;) || eSIM_Type.equals(&quot;FN_Black&quot;))" iff="false" isActive="true" isAutoGenerated="false" name="4" type="If-Then">
+<if-expr is_or="false">
+<focus-ctd-cond attribute="Scenario_Scop" operation="Equals">
+<focus-ctd-cond-val value="New_Device_OCE"/>
+</focus-ctd-cond>
+</if-expr>
+<then-expr is_or="false">
+<focus-ctd-cond attribute="Application_Process" operation="Equals">
+<focus-ctd-cond-val value="OCE"/>
+</focus-ctd-cond>
+<focus-ctd-cond attribute="Device_Process" operation="Equals">
+<focus-ctd-cond-val value="Direct_Fulfilment"/>
+<focus-ctd-cond-val value="BYOD"/>
+</focus-ctd-cond>
+<focus-ctd-cond attribute="FAN_Type" operation="Equals">
+<focus-ctd-cond-val value="FN_Primary"/>
+<focus-ctd-cond-val value="CRU_Mobility"/>
+</focus-ctd-cond>
+<focus-ctd-cond attribute="eSIM_Type" operation="Equals">
+<focus-ctd-cond-val value="Orange_Sim"/>
+<focus-ctd-cond-val value="FN_Black"/>
+</focus-ctd-cond>
+</then-expr>
+</restriction>
+<restriction expression="!(Scenario_Scop.equals(&quot;New_Device_Opus-Cor&quot;)) || Device_Process.equals(&quot;Cash_n_Carry&quot;) &amp;&amp; Application_Process.equals(&quot;Opus_COR&quot;) &amp;&amp; FAN_Type.equals(&quot;FN_Primary&quot;) &amp;&amp; eSIM_Type.equals(&quot;FN_Black&quot;)" iff="false" isActive="true" isAutoGenerated="false" name="5" type="If-Then">
+<if-expr is_or="false">
+<focus-ctd-cond attribute="Scenario_Scop" operation="Equals">
+<focus-ctd-cond-val value="New_Device_Opus-Cor"/>
+</focus-ctd-cond>
+</if-expr>
+<then-expr is_or="false">
+<focus-ctd-cond attribute="Device_Process" operation="Equals">
+<focus-ctd-cond-val value="Cash_n_Carry"/>
+</focus-ctd-cond>
+<focus-ctd-cond attribute="Application_Process" operation="Equals">
+<focus-ctd-cond-val value="Opus_COR"/>
+</focus-ctd-cond>
+<focus-ctd-cond attribute="FAN_Type" operation="Equals">
+<focus-ctd-cond-val value="FN_Primary"/>
+</focus-ctd-cond>
+<focus-ctd-cond attribute="eSIM_Type" operation="Equals">
+<focus-ctd-cond-val value="FN_Black"/>
+</focus-ctd-cond>
+</then-expr>
+</restriction>
+<restriction expression="!(Scenario_Scop.equals(&quot;New_Device_MyAtt&quot;)) || Application_Process.equals(&quot;MyAtt&quot;) &amp;&amp; (Device_Process.equals(&quot;Direct_Fulfilment&quot;) || Device_Process.equals(&quot;BYOD&quot;)) &amp;&amp; (FAN_Type.equals(&quot;FN_Subscriber_Paid&quot;) || FAN_Type.equals(&quot;IRU_Mobility&quot;)) &amp;&amp; eSIM_Type.equals(&quot;NA&quot;)" iff="false" isActive="true" isAutoGenerated="false" name="6" type="If-Then">
+<if-expr is_or="false">
+<focus-ctd-cond attribute="Scenario_Scop" operation="Equals">
+<focus-ctd-cond-val value="New_Device_MyAtt"/>
+</focus-ctd-cond>
+</if-expr>
+<then-expr is_or="false">
+<focus-ctd-cond attribute="Application_Process" operation="Equals">
+<focus-ctd-cond-val value="MyAtt"/>
+</focus-ctd-cond>
+<focus-ctd-cond attribute="Device_Process" operation="Equals">
+<focus-ctd-cond-val value="Direct_Fulfilment"/>
+<focus-ctd-cond-val value="BYOD"/>
+</focus-ctd-cond>
+<focus-ctd-cond attribute="FAN_Type" operation="Equals">
+<focus-ctd-cond-val value="FN_Subscriber_Paid"/>
+<focus-ctd-cond-val value="IRU_Mobility"/>
+</focus-ctd-cond>
+<focus-ctd-cond attribute="eSIM_Type" operation="Equals">
+<focus-ctd-cond-val value="NA"/>
+</focus-ctd-cond>
+</then-expr>
+</restriction>
+<restriction expression="!(Scenario_Scop.equals(&quot;ND1&quot;)) || FAN_Type.equals(&quot;FN_Primary&quot;) &amp;&amp; Application_Process.equals(&quot;Premier&quot;) &amp;&amp; eSIM_Type.equals(&quot;FN_Black&quot;) &amp;&amp; Device_Process.equals(&quot;Direct_Fulfilment&quot;)" iff="false" isActive="true" isAutoGenerated="false" name="7" type="If-Then">
+<if-expr is_or="false">
+<focus-ctd-cond attribute="Scenario_Scop" operation="Equals">
+<focus-ctd-cond-val value="ND1"/>
+</focus-ctd-cond>
+</if-expr>
+<then-expr is_or="false">
+<focus-ctd-cond attribute="FAN_Type" operation="Equals">
+<focus-ctd-cond-val value="FN_Primary"/>
+</focus-ctd-cond>
+<focus-ctd-cond attribute="Application_Process" operation="Equals">
+<focus-ctd-cond-val value="Premier"/>
+</focus-ctd-cond>
+<focus-ctd-cond attribute="eSIM_Type" operation="Equals">
+<focus-ctd-cond-val value="FN_Black"/>
+</focus-ctd-cond>
+<focus-ctd-cond attribute="Device_Process" operation="Equals">
+<focus-ctd-cond-val value="Direct_Fulfilment"/>
+</focus-ctd-cond>
+</then-expr>
+</restriction>
+<coverage-reqs-sets defaultCoverageRequirementsSet="323078_eSIM_Discovery">
+<coverage-reqs-set description="" name="323078_eSIM_Discovery">
+<coverage-req>
+<attribute name="Scenario_Scop"/>
+<attribute name="Application_Process"/>
+<attribute name="Device_Process"/>
+<attribute name="FAN_Type"/>
+<attribute name="eSIM_Type"/>
+<coverage-goal coverage-goal-val="2"/>
+</coverage-req>
+</coverage-reqs-set>
+</coverage-reqs-sets>
+<neg-coverage-reqs-sets defaultCoverageRequirementsSet="SingleNegativeCoverageRequirementsSet" isAutoNegCoverageRequirements="true">
+<coverage-reqs-set description="" name="SingleNegativeCoverageRequirementsSet"/>
+</neg-coverage-reqs-sets>
+<focus-ctd-decoration decorationName="DefaultTestCaseNameDecoration" decorationType="testCaseName" isActiveDecoration="false"/>
+<focus-ctd-decoration decorationName="DefaultFreeStyleDecoration" decorationType="freeStyle" isActiveDecoration="true"/>
+<focus-ctd-decoration decorationName="DefaultCucumberDecoration" decorationType="cucumberDecoration" isActiveDecoration="false"/>
+<focus-ctd-decoration decorationName="DefaultStructuredDecoration" decorationType="structuredDecoration" isActiveDecoration="false"/>
+<defaultParentDetails parentDetailsApplicationName="MFE Automation" parentDetailsFunctionality="MFE" parentDetailsModel="323078_eSIM_Discovery_Server_Lookup.model" parentDetailsPortfolio="NGA" parentDetailsTenantId="ATT" parentDetailsUsername="IgniteAdmin"/>
+<focus-ctd-model-sync>
+<focus-ctd-model-sync-mult/>
+<focus-ctd-model-sync-na/>
+</focus-ctd-model-sync>
+</focus-model>
